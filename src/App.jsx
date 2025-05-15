@@ -18,7 +18,7 @@ export const goodsFromServer = [
 
 export const App = () => {
   const [sortedField, setSortedField] = useState('');
-  let [reversed, setReversed] = useState(false);
+  const [reversed, setReversed] = useState(false);
 
   let goods = [...goodsFromServer].sort((good1, good2) => {
     switch (sortedField) {
@@ -88,7 +88,7 @@ export const App = () => {
 
       <ul>
         {goods.map(good => (
-          <li data-cy="Good">{good}</li>
+          <li data-cy="Good" key={good}>{good}</li>
         ))}
       </ul>
     </div>
